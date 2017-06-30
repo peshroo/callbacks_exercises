@@ -151,9 +151,11 @@ console.log( 'The total number of transactions is:', totalTransactions );
 
 var numSales;
 
-var salesTransactions = transactions.filter(function(transaction) {
+var issaSale = function(transaction) {
   return transaction.type === 'sale';
-});
+}
+var salesTransactions = transactions.filter(issaSale);
+
 numSales = salesTransactions.length;
 
 console.log( 'The total number of sales is:', numSales );
@@ -167,9 +169,12 @@ console.log( 'The total number of sales is:', numSales );
 */
 var numPurchases;
 
-var purchTransactions = transactions.filter(function(transaction) {
+var totalPurchases = function(transaction) {
   return transaction.type === 'purchase';
-});
+}
+
+var purchTransactions = transactions.filter(totalPurchases)
+
 numPurchases = purchTransactions.length;
 
 console.log( 'The total number of purchases is:', numPurchases );

@@ -167,6 +167,11 @@ console.log( 'The total number of sales is:', numSales );
 */
 var numPurchases;
 
+var purchTransactions = transactions.filter(function(transaction) {
+  return transaction.type === 'purchase';
+});
+numPurchases = purchTransactions.length;
+
 console.log( 'The total number of purchases is:', numPurchases );
 
 

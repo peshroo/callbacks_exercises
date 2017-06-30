@@ -173,7 +173,7 @@ var totalPurchases = function(transaction) {
   return transaction.type === 'purchase';
 }
 
-var purchTransactions = transactions.filter(totalPurchases)
+var purchTransactions = transactions.filter(totalPurchases);
 
 numPurchases = purchTransactions.length;
 
@@ -191,6 +191,18 @@ console.log( 'The total number of purchases is:', numPurchases );
 */
 var numCashSales;
 
+var cashSales = function(transaction) {
+  if(transaction.type === 'sale' && transaction.paymentMethod === 'cash') {
+    return true
+  } else {
+    return false
+  }
+}
+
+var cashTransactions = transactions.filter(cashSales);
+
+numCashSales = cashTransactions.length;
+
 console.log( 'The total number of cash sales is:', numCashSales );
 
 
@@ -204,6 +216,18 @@ console.log( 'The total number of cash sales is:', numCashSales );
   - Make sure to exclude any 'sales' made by 'credit'!
 */
 var numCreditPurchases;
+
+var creditPurchases = function(transaction) {
+  if(transaction.type === 'purchase' && transaction.paymentMethod === 'credit') {
+    return true
+  } else {
+    return false
+  }
+}
+
+var creditTransactions = transactions.filter(creditPurchases);
+
+numCreditPurchases = creditTransactions.length;
 
 console.log( 'The total number of credit purchases is:', numCreditPurchases );
 

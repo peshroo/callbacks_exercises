@@ -129,7 +129,6 @@ console.log( 'The total number of transactions is:', totalTransactions );
   HINT(S):
   - Not all transactions are 'sales'.
 */
-var numSales;
 
 /*
   Hey, welcome to the first question!
@@ -149,6 +148,13 @@ var numSales;
   P.S.
   The breakdown above takes up a lot of space, feel free to move it to the top or bottom of the file!
 */
+
+var numSales;
+
+var salesTransactions = transactions.filter(function(transaction) {
+  return transaction.type === 'sale';
+});
+numSales = salesTransactions.length;
 
 console.log( 'The total number of sales is:', numSales );
 
